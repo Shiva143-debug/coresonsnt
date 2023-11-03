@@ -2,7 +2,7 @@ import './App.css'
 import {Component} from 'react'
 import Popup from 'reactjs-popup'
 
-import {IoMdCheckmarkCircleOutline} from 'react-icons/io'
+import {IoMdCheckmarkCircleOutline, IoMdClose} from 'react-icons/io'
 
 import {BsPeopleFill} from 'react-icons/bs'
 
@@ -152,8 +152,9 @@ class App extends Component {
           <img
             src="https://res.cloudinary.com/dxgbxchqm/image/upload/v1698918138/corporate-training-with-ai-banner-image_za73vq.webp"
             alt="any"
+            className="lady-image"
           />
-          <div className="card">
+          <div className="box">
             <p>The Top Trending Topic of the Year</p>
             <h1 className="c-h1">
               Unleashing the Potential of AI in Corporate Training
@@ -179,96 +180,109 @@ class App extends Component {
               Duration: 90 Minutes <br />
               <s>$997 VALUE </s> <span>FREE!</span>
             </p>
-            <div className="popup-container">
+            <div className="popup-container-1">
               <Popup
                 trigger={
-                  <button className="trigger-button" type="button">
+                  <button className="trigger-button-1" type="button">
                     <BsPeopleFill className="people" />
                     SECURE YOUR SEAT
                   </button>
                 }
               >
-                <div className="form-container">
-                  <div className="card">
-                    {isFormSubmitted ? (
-                      this.renderSuccessCard()
-                    ) : (
-                      <form className="form" onSubmit={this.formSubmit}>
-                        <h1 className="head-1">
-                          Register For The FREE Webinar
-                        </h1>
-                        <div>
-                          <label htmlFor="First" className="label">
-                            First Name*
-                          </label>
-                          <br />
-                          <input
-                            type="text"
-                            id="First"
-                            onChange={this.onChangeFirstName}
-                            onBlur={this.BlurFirstName}
-                            value={firstName}
-                            className={className}
-                          />
-                          {showFirstNameError && (
-                            <p className="error">Required</p>
-                          )}
-                          <br />
-                          <label htmlFor="Last" className="label">
-                            Last name*
-                          </label>
-                          <br />
-                          <input
-                            type="text"
-                            id="Last"
-                            onChange={this.onChangeLastName}
-                            onBlur={this.BlurLastName}
-                            value={lastName}
-                            className={className2}
-                          />
-                          {showLastNameError && (
-                            <p className="error">Required</p>
-                          )}
-                          <br />
-                          <label htmlFor="business" className="label">
-                            Business Email*
-                          </label>
-                          <br />
-                          <input
-                            type="email"
-                            id="business"
-                            onChange={this.onChangeBusinessMail}
-                            onBlur={this.BlurBusinessMail}
-                            value={BusinessEmail}
-                            className={className3}
-                          />
-                          {showBusinessError && (
-                            <p className="error">Required</p>
-                          )}
-                          <br />
-                          <label htmlFor="phone" className="label">
-                            Phone Number*
-                          </label>
-                          <br />
-                          <input
-                            type="number"
-                            id="phone"
-                            onChange={this.onChangePhoneNumber}
-                            onBlur={this.BlurPhone}
-                            value={PhoneNumber}
-                            className={className4}
-                          />
-                          {showPhoneError && <p className="error">Required</p>}
-                          <br />
+                {close => (
+                  <>
+                    <div className="form-container">
+                      <div className="card">
+                        {isFormSubmitted ? (
+                          this.renderSuccessCard()
+                        ) : (
+                          <form className="form" onSubmit={this.formSubmit}>
+                            <button
+                              type="button"
+                              onClick={() => close()}
+                              data-testid="closeButton"
+                            >
+                              <IoMdClose size={20} color="#231f20" />
+                            </button>
+                            <h1 className="head-1">
+                              Register For The FREE Webinar
+                            </h1>
+                            <div>
+                              <label htmlFor="First" className="label">
+                                First Name*
+                              </label>
+                              <br />
+                              <input
+                                type="text"
+                                id="First"
+                                onChange={this.onChangeFirstName}
+                                onBlur={this.BlurFirstName}
+                                value={firstName}
+                                className={className}
+                              />
+                              {showFirstNameError && (
+                                <p className="error">Required</p>
+                              )}
+                              <br />
+                              <label htmlFor="Last" className="label">
+                                Last name*
+                              </label>
+                              <br />
+                              <input
+                                type="text"
+                                id="Last"
+                                onChange={this.onChangeLastName}
+                                onBlur={this.BlurLastName}
+                                value={lastName}
+                                className={className2}
+                              />
+                              {showLastNameError && (
+                                <p className="error">Required</p>
+                              )}
+                              <br />
+                              <label htmlFor="business" className="label">
+                                Business Email*
+                              </label>
+                              <br />
+                              <input
+                                type="email"
+                                id="business"
+                                onChange={this.onChangeBusinessMail}
+                                onBlur={this.BlurBusinessMail}
+                                value={BusinessEmail}
+                                className={className3}
+                              />
+                              {showBusinessError && (
+                                <p className="error">Required</p>
+                              )}
+                              <br />
+                              <label htmlFor="phone" className="label">
+                                Phone Number*
+                              </label>
+                              <br />
+                              <input
+                                type="number"
+                                id="phone"
+                                onChange={this.onChangePhoneNumber}
+                                onBlur={this.BlurPhone}
+                                value={PhoneNumber}
+                                className={className4}
+                              />
+                              {showPhoneError && (
+                                <p className="error">Required</p>
+                              )}
+                              <br />
 
-                          <button type="submit" className="button">
-                            SECURE YOUR SEAT
-                          </button>
-                        </div>
-                      </form>
-                    )}
-                  </div>
-                </div>
+                              <button type="submit" className="button">
+                                SECURE YOUR SEAT
+                              </button>
+                            </div>
+                          </form>
+                        )}
+                      </div>
+                    </div>
+                  </>
+                )}
               </Popup>
             </div>
           </div>
@@ -280,7 +294,7 @@ class App extends Component {
           className="logos"
         />
         <div className="d">
-          <h1>YOU WILL LEARN:</h1>
+          <h1 className="learn">YOU WILL LEARN:</h1>
           <div className="flex">
             <IoMdCheckmarkCircleOutline className="icon" />
             <p>Evolution of AI and Corporate Training</p>
@@ -316,8 +330,10 @@ class App extends Component {
           <h1 className="d-h1">
             Unleashing the Potential of AI in Corporate Training
           </h1>
-          <p>The Impact of AI on L&D – Insights and Applications</p>
-          <p>
+          <p className="d-p2">
+            The Impact of AI on L&D – Insights and Applications
+          </p>
+          <p className="d1-p1">
             Tuesday, January 09, 2024 <br />
             11 AM Eastern | 8 AM Pacific <br />
             Duration: 90 Minutes <br />
@@ -334,81 +350,100 @@ class App extends Component {
                 </button>
               }
             >
-              <div className="form-container">
-                <div className="card">
-                  {isFormSubmitted ? (
-                    this.renderSuccessCard()
-                  ) : (
-                    <form className="form" onSubmit={this.formSubmit}>
-                      <h1 className="head-1">Register For The FREE Webinar</h1>
-                      <div>
-                        <label htmlFor="First" className="label">
-                          First Name*
-                        </label>
-                        <br />
-                        <input
-                          type="text"
-                          id="First"
-                          onChange={this.onChangeFirstName}
-                          onBlur={this.BlurFirstName}
-                          value={firstName}
-                          className={className}
-                        />
-                        {showFirstNameError && (
-                          <p className="error">Required</p>
-                        )}
-                        <br />
-                        <label htmlFor="Last" className="label">
-                          Last name*
-                        </label>
-                        <br />
-                        <input
-                          type="text"
-                          id="Last"
-                          onChange={this.onChangeLastName}
-                          onBlur={this.BlurLastName}
-                          value={lastName}
-                          className={className2}
-                        />
-                        {showLastNameError && <p className="error">Required</p>}
-                        <br />
-                        <label htmlFor="business" className="label">
-                          Business Email*
-                        </label>
-                        <br />
-                        <input
-                          type="email"
-                          id="business"
-                          onChange={this.onChangeBusinessMail}
-                          onBlur={this.BlurBusinessMail}
-                          value={BusinessEmail}
-                          className={className3}
-                        />
-                        {showBusinessError && <p className="error">Required</p>}
-                        <br />
-                        <label htmlFor="phone" className="label">
-                          Phone Number*
-                        </label>
-                        <br />
-                        <input
-                          type="number"
-                          id="phone"
-                          onChange={this.onChangePhoneNumber}
-                          onBlur={this.BlurPhone}
-                          value={PhoneNumber}
-                          className={className4}
-                        />
-                        {showPhoneError && <p className="error">Required</p>}
-                        <br />
+              {close => (
+                <>
+                  <div className="form-container">
+                    <div className="card">
+                      {isFormSubmitted ? (
+                        this.renderSuccessCard()
+                      ) : (
+                        <form className="form" onSubmit={this.formSubmit}>
+                          <button
+                            type="button"
+                            onClick={() => close()}
+                            data-testid="closeButton"
+                          >
+                            <IoMdClose size={20} color="#231f20" />
+                          </button>
+                          <h1 className="head-1">
+                            Register For The FREE Webinar
+                          </h1>
+                          <div>
+                            <label htmlFor="First" className="label">
+                              First Name*
+                            </label>
+                            <br />
+                            <input
+                              type="text"
+                              id="First"
+                              onChange={this.onChangeFirstName}
+                              onBlur={this.BlurFirstName}
+                              value={firstName}
+                              className={className}
+                            />
+                            {showFirstNameError && (
+                              <p className="error">Required</p>
+                            )}
+                            <br />
+                            <label htmlFor="Last" className="label">
+                              Last name*
+                            </label>
+                            <br />
+                            <input
+                              type="text"
+                              id="Last"
+                              onChange={this.onChangeLastName}
+                              onBlur={this.BlurLastName}
+                              value={lastName}
+                              className={className2}
+                            />
+                            {showLastNameError && (
+                              <p className="error">Required</p>
+                            )}
+                            <br />
+                            <label htmlFor="business" className="label">
+                              Business Email*
+                            </label>
+                            <br />
+                            <input
+                              type="email"
+                              id="business"
+                              onChange={this.onChangeBusinessMail}
+                              onBlur={this.BlurBusinessMail}
+                              value={BusinessEmail}
+                              className={className3}
+                            />
+                            {showBusinessError && (
+                              <p className="error">Required</p>
+                            )}
+                            <br />
+                            <label htmlFor="phone" className="label">
+                              Phone Number*
+                            </label>
+                            <br />
+                            <input
+                              type="number"
+                              id="phone"
+                              onChange={this.onChangePhoneNumber}
+                              onBlur={this.BlurPhone}
+                              value={PhoneNumber}
+                              className={className4}
+                            />
+                            {showPhoneError && (
+                              <p className="error">Required</p>
+                            )}
+                            <br />
 
-                        <button type="submit" className="button">
-                          SECURE YOUR SEAT
-                        </button>
-                      </div>
-                    </form>
-                  )}
-                </div>
-              </div>
+                            <button type="submit" className="button">
+                              SECURE YOUR SEAT
+                            </button>
+                          </div>
+                        </form>
+                      )}
+                    </div>
+                  </div>
+                </>
+              )}
             </Popup>
           </div>
         </div>
@@ -525,81 +560,100 @@ class App extends Component {
                 </button>
               }
             >
-              <div className="form-container">
-                <div className="card">
-                  {isFormSubmitted ? (
-                    this.renderSuccessCard()
-                  ) : (
-                    <form className="form" onSubmit={this.formSubmit}>
-                      <h1 className="head-1">Register For The FREE Webinar</h1>
-                      <div>
-                        <label htmlFor="First" className="label">
-                          First Name*
-                        </label>
-                        <br />
-                        <input
-                          type="text"
-                          id="First"
-                          onChange={this.onChangeFirstName}
-                          onBlur={this.BlurFirstName}
-                          value={firstName}
-                          className={className}
-                        />
-                        {showFirstNameError && (
-                          <p className="error">Required</p>
-                        )}
-                        <br />
-                        <label htmlFor="Last" className="label">
-                          Last name*
-                        </label>
-                        <br />
-                        <input
-                          type="text"
-                          id="Last"
-                          onChange={this.onChangeLastName}
-                          onBlur={this.BlurLastName}
-                          value={lastName}
-                          className={className2}
-                        />
-                        {showLastNameError && <p className="error">Required</p>}
-                        <br />
-                        <label htmlFor="business" className="label">
-                          Business Email*
-                        </label>
-                        <br />
-                        <input
-                          type="email"
-                          id="business"
-                          onChange={this.onChangeBusinessMail}
-                          onBlur={this.BlurBusinessMail}
-                          value={BusinessEmail}
-                          className={className3}
-                        />
-                        {showBusinessError && <p className="error">Required</p>}
-                        <br />
-                        <label htmlFor="phone" className="label">
-                          Phone Number*
-                        </label>
-                        <br />
-                        <input
-                          type="number"
-                          id="phone"
-                          onChange={this.onChangePhoneNumber}
-                          onBlur={this.BlurPhone}
-                          value={PhoneNumber}
-                          className={className4}
-                        />
-                        {showPhoneError && <p className="error">Required</p>}
-                        <br />
+              {close => (
+                <>
+                  <div className="form-container">
+                    <div className="card">
+                      {isFormSubmitted ? (
+                        this.renderSuccessCard()
+                      ) : (
+                        <form className="form" onSubmit={this.formSubmit}>
+                          <button
+                            type="button"
+                            onClick={() => close()}
+                            data-testid="closeButton"
+                          >
+                            <IoMdClose size={20} color="#231f20" />
+                          </button>
+                          <h1 className="head-1">
+                            Register For The FREE Webinar
+                          </h1>
+                          <div>
+                            <label htmlFor="First" className="label">
+                              First Name*
+                            </label>
+                            <br />
+                            <input
+                              type="text"
+                              id="First"
+                              onChange={this.onChangeFirstName}
+                              onBlur={this.BlurFirstName}
+                              value={firstName}
+                              className={className}
+                            />
+                            {showFirstNameError && (
+                              <p className="error">Required</p>
+                            )}
+                            <br />
+                            <label htmlFor="Last" className="label">
+                              Last name*
+                            </label>
+                            <br />
+                            <input
+                              type="text"
+                              id="Last"
+                              onChange={this.onChangeLastName}
+                              onBlur={this.BlurLastName}
+                              value={lastName}
+                              className={className2}
+                            />
+                            {showLastNameError && (
+                              <p className="error">Required</p>
+                            )}
+                            <br />
+                            <label htmlFor="business" className="label">
+                              Business Email*
+                            </label>
+                            <br />
+                            <input
+                              type="email"
+                              id="business"
+                              onChange={this.onChangeBusinessMail}
+                              onBlur={this.BlurBusinessMail}
+                              value={BusinessEmail}
+                              className={className3}
+                            />
+                            {showBusinessError && (
+                              <p className="error">Required</p>
+                            )}
+                            <br />
+                            <label htmlFor="phone" className="label">
+                              Phone Number*
+                            </label>
+                            <br />
+                            <input
+                              type="number"
+                              id="phone"
+                              onChange={this.onChangePhoneNumber}
+                              onBlur={this.BlurPhone}
+                              value={PhoneNumber}
+                              className={className4}
+                            />
+                            {showPhoneError && (
+                              <p className="error">Required</p>
+                            )}
+                            <br />
 
-                        <button type="submit" className="button">
-                          SECURE YOUR SEAT
-                        </button>
-                      </div>
-                    </form>
-                  )}
-                </div>
-              </div>
+                            <button type="submit" className="button">
+                              SECURE YOUR SEAT
+                            </button>
+                          </div>
+                        </form>
+                      )}
+                    </div>
+                  </div>
+                </>
+              )}
             </Popup>
           </div>
         </div>
@@ -612,7 +666,7 @@ class App extends Component {
           <div className="flexed">
             <p>Copyright © 2023, CommLab India</p>
 
-            <p>Privacy Policy | Site Map</p>
+            <p className="privacy">Privacy Policy | Site Map</p>
           </div>
         </div>
       </div>

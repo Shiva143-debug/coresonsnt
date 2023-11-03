@@ -11,12 +11,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .container {
-  background-image: url(https://res.cloudinary.com/dxgbxchqm/image/upload/v1698920115/istockphoto-661151102-170667a_hsxnvk.webp);
+  background-image: url(https://resources.commlabindia.com/hubfs/webinars/corporate-training-with-ai-banner.jpg);
   background-size: 100vw;
   background-position: fixed;
 }
+@media (max-width: 576px) {
+  .container {
+    background-image: url(https://resources.commlabindia.com/hubfs/webinars/corporate-training-with-ai-banner.jpg) !important;
+    background-size: cover;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+}
 hr {
   width: 80%;
+}
+@media (max-width: 576px) {
+  .lady-image {
+    width: 100px;
+    margin-left: 250px;
+  }
 }
 .start {
   display: flex;
@@ -24,11 +38,29 @@ hr {
   color: navy;
   width: 100%;
 }
-.card {
-  background-color: white;
+.box {
+  background-color: #bfbfbf;
   margin-right: 50px;
   text-align: center;
-  width: 70%;
+  width: 60%;
+}
+
+@media (max-width: 576px) {
+  .box {
+    background-color: #bfbfbf;
+    margin-left: 20px;
+    text-align: center;
+    width: 90%;
+  }
+}
+@media (max-width: 576px) {
+  .start {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    color: navy;
+    width: 100%;
+  }
 }
 .i {
   background-color: transparent;
@@ -45,7 +77,9 @@ span {
 .logos {
   background-color: red;
   width: 100vw;
+  margin-bottom: -30px;
 }
+
 .i-t {
   display: flex;
   justify-content: flex-start;
@@ -67,12 +101,36 @@ span {
   font-size: 24px;
   font-weight: bold;
 }
+@media (max-width: 576px) {
+  .head {
+    color: white;
+    text-align: center;
+    padding-left: 80px;
+    padding-right: 130px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
 .d {
-  background-color: white;
+  background-image: url(https://res.cloudinary.com/dxgbxchqm/image/upload/v1698996979/download_2_y3bioi.jpg);
+  background-size: cover;
+  background-attachment: fixed;
   text-align: center;
   color: navy;
   font-size: 18px;
   font-weight: 500;
+}
+@media (max-width: 576px) {
+  .learn {
+    font-size: 18px;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .d {
+    text-align: center;
+  }
 }
 .c-h1 {
   color: maroon;
@@ -81,6 +139,15 @@ span {
   display: flex;
   justify-content: flex-start;
   margin-left: 200px;
+}
+@media (max-width: 576px) {
+  .flex {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+    font-size: 20px;
+    max-width: 400px;
+  }
 }
 .icon {
   color: red;
@@ -91,6 +158,30 @@ span {
   margin-left: 200px;
   margin-right: 200px;
 }
+
+@media (max-width: 576px) {
+  .d-h1 {
+    margin-left: 80px;
+    margin-right: 150px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .d1-p1 {
+    margin-left: 80px;
+    margin-right: 150px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .d-p2 {
+    margin-left: 80px;
+    margin-right: 150px;
+    font-size: 20px;
+    max-width: 400px;
+  }
+}
 .e {
   color: white;
   background-color: black;
@@ -98,9 +189,21 @@ span {
 .hosts {
   text-align: center;
 }
+@media (max-width: 576px) {
+  .hosts {
+    text-align: center;
+    font-size: 16px;
+  }
+}
 .cards {
   display: flex;
   flex-direction: row;
+}
+@media (max-width: 576px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .s-card {
   display: flex;
@@ -123,6 +226,19 @@ span {
   color: white;
   justify-content: space-between;
 }
+@media (max-width: 576px) {
+  .flexed {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 576px) {
+  .privacy {
+    padding-left: 120px;
+  }
+}
 .g {
   background-color: black;
   width: 100vw;
@@ -138,15 +254,36 @@ span {
   margin: 8px;
   background-color: maroon;
   border: none;
-  border-radius: 4px;
+  border-radius: 16px;
   outline: none;
+  margin-left: 200px;
 }
+@media (max-width: 576px) {
+  .trigger-button {
+    margin-right: 700px;
+  }
+}
+@media (max-width: 576px) {
+  h3 {
+    font-size: 14px;
+    padding-right: 100px;
+    padding-left: 10px;
+  }
+}
+@media (max-width: 576px) {
+  h4 {
+    font-size: 14px;
+    padding-right: 100px;
+    padding-left: 10px;
+  }
+}
+
 .popup-container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 1000px;
-  background-color: white;
+  background-color: transparent;
 }
 .form-container {
   display: flex;
@@ -160,6 +297,12 @@ span {
   padding-top: 50px;
   color: black;
 }
+@media (max-width: 576px) {
+  .head-1 {
+    font-size: 16px;
+    padding-top: 10px;
+  }
+}
 .input-bg {
   background-color: #fef2f4;
   border-color: #ff0b37;
@@ -171,6 +314,7 @@ span {
   box-shadow: 0px 4px 16px 0px #bfbfbf;
 
   padding: 20px;
+  background-color: #bfbfbf;
 }
 .success-image {
   margin-left: 40px;
@@ -185,11 +329,23 @@ span {
 .form {
   text-align: start;
 }
+@media (max-width: 576px) {
+  .form {
+    width: 250px;
+    margin-left: -20px;
+    padding-left: 20px;
+  }
+}
 label {
   text-align: start;
 }
 input {
   width: 350px;
+}
+@media (max-width: 576px) {
+  input {
+    width: 200px;
+  }
 }
 .button {
   background-color: #ea580c;
@@ -199,4 +355,35 @@ input {
   border-radius: 8px;
   margin-top: 10px;
   margin-left: 100px;
+}
+@media (max-width: 576px) {
+  .button {
+    margin-right: 200px;
+    margin-left: 10px;
+  }
+}
+.trigger-button-1 {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Roboto';
+  color: white;
+  padding: 8px 15px 8px 15px;
+  margin: 8px;
+  background-color: maroon;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  margin-right: 300px;
+}
+.popup-container-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  background-color: transparent;
+}
+@media (max-width: 576px) {
+  .trigger-button-1 {
+    margin-right: 600px;
+  }
 }
